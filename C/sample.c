@@ -3,6 +3,11 @@
 
 int main(void)
 {
-	int *a;
-	*a = 10;
+	char a = 'a';
+	printf("sizeof int pointer:%d\n",(int)sizeof(int*));
+	printf("sizeof char:%d\n",(int)sizeof('a'));
+	printf("sizeof char:%d\n",(int)sizeof(a));
+	printf("sizeof int pointer:%d\n",(int)sizeof(int*));
+	printf("sizeof int pointer:%d\n",(int)sizeof(int*));
 }
+

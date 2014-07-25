@@ -52,9 +52,12 @@ int main(void)
 	root = new_node(5);
 	
 	root->left = new_node(4);
+	root->left->left = new_node(2);
+	root->left->right = new_node(3);
 	root->right = new_node(3);
+	root->right->left = new_node(1);
 
 	PrintInorder(root);
 
-
+	return 0;
 }
