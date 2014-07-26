@@ -22,6 +22,7 @@ struct node* new_node(int value)
 	return new;
 }
 
+//Function to add node to the list
 void add_node(struct node **head,int value)
 {
 
@@ -47,27 +48,67 @@ void add_node(struct node **head,int value)
 	return;
 }
 
-void reverse_list(struct node* head)
+// Function to reverse a linked list
+void reverse_list(struct node** head)
 {
 
 	struct node *tmp;
 	struct node *prev;
 	struct node *current;	
+	int count=0;
 
-	current = head;
+	current = *head;
 	prev = NULL;
-	tmp = NULL;
 
 	while (current)
 	{
 
-	current->next = tmp;
-	
-
+		tmp = current->next;
+		current->next = prev;
+		prev = current;
+		//printf("Node[%d]: %d\t",count,current->data);
+		if (tmp == NULL)
+			*head = current;
+		current = tmp;
+		count++;
 	}
 
+	return;
 }
 
+// Function to delete a node in a linked list
+void delete_node (struct node **head, int index)
+{
+	struct node *delete,*prev;
+	int count = 0;
+
+	prev = NULL;
+	delete = *head;
+
+	while(delete)
+	{
+		if (count == index)
+		{
+			//this is the node to be deleted
+			if (delete == *head) 
+			{
+				*head = delete->next;
+				free(delete);
+			}
+			else
+			{
+				prev->next = delete->next;
+				free(delete);
+			}
+		}		
+		prev = delete;
+		delete = delete->next;
+		count++;
+
+	}
+}
+
+// Function to traverse and print a linked list
 void traverse_print(const struct node *head)
 {
 	const struct node* trav;
@@ -81,6 +122,7 @@ void traverse_print(const struct node *head)
 		trav = trav->next;
 	}
 	
+	printf("\n");
 	return;
 
 }
@@ -98,6 +140,20 @@ int main(void)
 	add_node(&head,1);
 	add_node(&head,9);
 
+	printf("Created linked list\n");
 	traverse_print(head);
+
+	reverse_list(&head);
+
+	printf("Reversed linked list\n");
+	traverse_print(head);
+
+	delete_node(&head,2);
+
+	printf("Deleting node at index 2\n");
+	traverse_print(head);
+
+	add_node(&head,3);
+
 	return 0;
 }
