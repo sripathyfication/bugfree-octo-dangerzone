@@ -1,0 +1,4 @@
+This folder contains string related practise exercises.
+
+Each file is named problem-<id>. The problem we're trying to solve, id is iteration. Each
+increment should be a better version of lower iteration.
