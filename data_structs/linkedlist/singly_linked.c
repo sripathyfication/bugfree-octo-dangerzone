@@ -3,12 +3,14 @@
 
 struct node {
     int data;
+    int index;
     struct node *next;
 };
 
 
 struct node *new_node(int data)
 {
+    static int index = 0;
     struct node *new;
 
     new = (struct node *) malloc (sizeof(struct node));
@@ -16,8 +18,10 @@ struct node *new_node(int data)
     if (new != NULL) {
         new->next = NULL;
         new->data = data;
+        new->index = index;
     }
 
+    index++;
     return new;
 }
 
@@ -71,13 +75,39 @@ void push_node(int data, struct node **headref, struct node **tailref)
     return;
 }
 
+void club_odd_even(struct node *head) 
+{
+
+    struct node *odd, *even, *tmp;
+    if (head == NULL) return ;
+
+    odd = head;
+    even = head->next;
+
+    while (odd && even) {
+        tmp = even->next;
+        if (tmp) {
+            odd->next = tmp;
+            even->next = tmp->next;
+            tmp->next = even;
+            odd = tmp->next;
+            even = odd->next;
+        }
+    }
+                            
+    return;
+}
+
 void print_list(struct node *tailref) 
 {
     int index = 0;
     struct node *parse = tailref;
+    printf(" ===========================\n");
+    printf(" Printing singly linked list\n");
+    printf(" ---------------------------\n");
 
     while (parse) {
-        printf("Node [%d]: %d \n", index ,parse->data);
+        printf("Node [%d]: %d \n", parse->index ,parse->data);
         parse = parse->next;
         index++;
     }
@@ -88,12 +118,19 @@ int main()
     int length = 0;
     struct node *head = NULL, *tail = NULL;
 
-    push_node(5, &head, &tail);
-    push_node(2, &head, &tail);
     push_node(1, &head, &tail);
+    push_node(2, &head, &tail);
+    push_node(3, &head, &tail);
     push_node(4, &head, &tail);
+    push_node(5, &head, &tail);
+    push_node(6, &head, &tail);
+    push_node(7, &head, &tail);
+    push_node(8, &head, &tail);
     //insert_node(2, &tail, &head);
 
+    print_list(tail);
+
+    club_odd_even(tail);
     print_list(tail);
 }
 
