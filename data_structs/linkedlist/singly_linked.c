@@ -84,9 +84,10 @@ void club_odd_even(struct node *head)
 
     old_odd = head;
     first_even = even = head->next;
-    new_odd = even->next;
 
-    if (!old_odd || !even) return ;
+    if (old_odd && !even) return ;
+
+    new_odd = even->next;
 
     while (even && new_odd) {
         if (!(count%2)) {
@@ -129,13 +130,6 @@ int main()
     struct node *head = NULL, *tail = NULL;
 
     push_node(1, &head, &tail);
-    push_node(2, &head, &tail);
-    push_node(3, &head, &tail);
-    push_node(4, &head, &tail);
-    push_node(5, &head, &tail);
-    push_node(6, &head, &tail);
-    push_node(7, &head, &tail);
-    push_node(8, &head, &tail);
     //insert_node(2, &tail, &head);
 
     print_list(tail);
