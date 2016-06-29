@@ -80,6 +80,8 @@ void club_odd_even(struct node *head)
     int count = 0;
     struct node* old_odd, *new_odd, *even, *first_even;
 
+    if (!head) return;
+
     old_odd = head;
     first_even = even = head->next;
     new_odd = even->next;
