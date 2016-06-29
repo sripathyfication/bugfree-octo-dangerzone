@@ -77,25 +77,33 @@ void push_node(int data, struct node **headref, struct node **tailref)
 
 void club_odd_even(struct node *head) 
 {
+    int count = 0;
+    struct node* old_odd, *new_odd, *even, *first_even;
 
-    struct node *odd, *even, *tmp;
-    if (head == NULL) return ;
+    old_odd = head;
+    first_even = even = head->next;
+    new_odd = even->next;
 
-    odd = head;
-    even = head->next;
+    if (!old_odd || !even) return ;
 
-    while (odd && even) {
-        tmp = even->next;
-        if (tmp) {
-            odd->next = tmp;
-            even->next = tmp->next;
-            tmp->next = even;
-            odd = tmp->next;
-            even = odd->next;
+    while (even && new_odd) {
+        if (!(count%2)) {
+            //odd node
+            old_odd->next = new_odd;
+            even->next = new_odd->next;
+            old_odd = new_odd;
+            even = even->next;
+            printf(" count: %d \n", count);
+        } else {
+            // even node
+            new_odd = even->next;
         }
+        count++;
     }
-                            
-    return;
+
+    old_odd->next = first_even;
+                                
+    return ;
 }
 
 void print_list(struct node *tailref) 
