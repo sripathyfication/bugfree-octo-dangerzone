@@ -54,7 +54,7 @@ int main(void)
 	quicksort(arr,0,7);
 
 	//Print it
-	for(i=0;i<=7;i++)
+	for(i=0;i<7;i++)
 		printf("%d \t",arr[i]);
 
 	printf("\n");
