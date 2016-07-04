@@ -105,10 +105,16 @@ void sort(int *inp_arr, int len)
 #define INPUT_LEN  10 
 int main()
 {
-    int i,inp_arr[INPUT_LEN] = {-11,1,7,1,2,6,4,3,2,1};
+    int i,inp_arr[INPUT_LEN] = {-11,1,-23,1,2,6,4,3,2,1001};
 
+    printf("Input array:\n");
+    for (i = 0; i < INPUT_LEN; i++)
+        printf(" %d\t", inp_arr[i]);
+
+    printf("\n");
     sort(inp_arr, INPUT_LEN);
 
+    printf("Sorted array:\n");
     for (i = 0; i < INPUT_LEN; i++)
         printf(" %d\t", inp_arr[i]);
 
