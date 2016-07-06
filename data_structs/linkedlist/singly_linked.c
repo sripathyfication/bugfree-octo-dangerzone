@@ -9,6 +9,23 @@ struct node {
 };
 
 
+void print_list(struct node *head) 
+{
+    int index = 0;
+    struct node *parse = head;
+    printf(" ===========================\n");
+    printf(" Printing singly linked list\n");
+    printf(" ---------------------------\n");
+
+    while (parse) {
+        printf("Node [%d]: %d \n", parse->index ,parse->data);
+        parse = parse->next;
+        index++;
+    }
+}
+
+
+
 struct node *new_node(int data)
 {
     static int index = 0;
@@ -26,37 +43,9 @@ struct node *new_node(int data)
     return new;
 }
 
-void insert_node(int data, struct node **tailref, struct node **headref)
+void push_node(int data, struct node **headref) 
 {
-    struct node *temp, *new;
-
-    new = new_node(data);
-
-    if (new == NULL) {
-        return;
-    }
-
-    if (*tailref == NULL) {
-        *headref = *tailref = new;
-        return;
-    }
-
-    temp = *tailref;
-
-    // find end
-    while (temp->next) {
-        temp = temp->next;
-    }
-
-    // found end.
-    *tailref = temp->next = new;
-
-    return;
-}
-
-void push_node(int data, struct node **headref, struct node **tailref) 
-{
-    struct node *new, *temp;
+    struct node *new, *tmp;
     
     new = new_node (data);
 
@@ -65,15 +54,82 @@ void push_node(int data, struct node **headref, struct node **tailref)
     }
 
     if (*headref == NULL) {
-        *tailref = *headref = new;
+        *headref = new;
         return;
     }
 
-    temp = *headref; 
-    temp->next = new;
-
+    new->next =  *headref; 
     *headref = new;
+
     return;
+}
+
+int get_length(struct node *head)
+{
+    int len = 0;
+    struct node *tmp = head;
+
+    while (tmp) { len++; tmp = tmp->next; }
+
+    return len;
+}
+
+
+void front_back_split(struct node *head, struct node **first_head, struct node **second_head)
+{
+    int half_length, length, first_len, second_len, tmp_len;
+
+    /* sanity checks */
+    if (!head) {
+       *first_head = NULL;
+       *second_head = NULL;
+       return;
+    }
+
+    if (!head->next) {
+       *first_head = *second_head = head;
+       return;
+    }
+
+    length = get_length(head); 
+    half_length = length /2 ; 
+
+    if (length % 2)  { 
+       first_len = half_length + 1;
+       second_len = half_length;
+    } else {
+       first_len = second_len = half_length;
+    }
+
+    /* create front half */
+    struct node *tmp = head;
+    tmp_len = first_len;
+    while (tmp && tmp_len) {
+        push_node(tmp->data, first_head);   
+        tmp_len--;
+        tmp = tmp->next;
+    }
+
+    print_list(*first_head);
+
+    /* create second half */
+    tmp = head;
+    tmp_len = first_len;
+
+    /* traverse to start of second half */
+    while (tmp && tmp_len) {
+        tmp = tmp->next;
+        tmp_len--;
+    }
+
+    while (tmp && second_len) {
+        push_node(tmp->data, second_head);   
+        second_len--;
+        tmp = tmp->next;
+    }
+
+    print_list(*second_head);
+
 }
 
 void club_odd_even(struct node *head) 
@@ -211,47 +267,77 @@ void reverse_list_from_pos(struct node **head, int start, int end)
 
 
 
-void print_list(struct node *tailref) 
+void print_menu() 
 {
-    int index = 0;
-    struct node *parse = tailref;
-    printf(" ===========================\n");
-    printf(" Printing singly linked list\n");
-    printf(" ---------------------------\n");
 
-    while (parse) {
-        printf("Node [%d]: %d \n", parse->index ,parse->data);
-        parse = parse->next;
-        index++;
-    }
+    printf(" \n \n");
+    printf(" SINGLY LINKED LIST OPERATIONS\n");
+    printf(" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    printf(" u -- Reverse the list from a position \n");
+    printf(" r -- Reverse the entire list \n");
+    printf(" c -- Club odd and even nodes of the list \n");
+    printf(" p -- Print the list \n");
+    printf(" l -- Print the length of the list \n");
+    printf(" d -- Delete  a node  from list \n");
+    printf(" f -- Split singly linked list into front and back halves \n");
+    printf(" e -- Exit \n");
+    printf(" \n \n");
 }
 
-int main() 
+
+int main(int argc, char **argv) 
 {
     int length = 0;
-    struct node *head = NULL, *tail = NULL;
+    char option;
+    struct node *head = NULL, *front_head = NULL, *back_head = NULL;
     bool has_cycle = false;
 
-    push_node(1, &head, &tail);
-    push_node(2, &head, &tail);
-    push_node(3, &head, &tail);
-    push_node(4, &head, &tail);
-    push_node(5, &head, &tail);
-    push_node(6, &head, &tail);
-    push_node(7, &head, &tail);
-    push_node(8, &head, &tail);
-    //insert_node(2, &tail, &head);
+    push_node(1, &head);
+    push_node(2, &head);
+    push_node(3, &head);
+    push_node(4, &head);
+    push_node(5, &head);
+    push_node(6, &head);
+    push_node(7, &head);
+    push_node(8, &head);
 
-    print_list(tail);
+    print_menu();
+    while (1) {
+        scanf("%c", &option);
+        switch (option) {
+            case 'u':
+                printf(" Reversing linked list from position \n");
+                reverse_list_from_pos(&head,0,3);
+                break;
+            case 'r':
+                printf(" Reversing the linked list \n");
+                reverse_list(&head);
+                break;
+            case 'c':
+                printf(" Club odd and even nodes \n");
+                club_odd_even(head);
+                break;
+            case 'd':
+                break;
+            case 'f':
+                printf(" Splitting front to back \n");
+                front_back_split(head, &front_head, &back_head);
+                break;
+            case 'l':
+                printf(" Length of the list: %d \n", get_length(head));
+                break;
+            case 'e':
+                printf(" Exiting..\n");
+                exit(0);
+            case 'p':
+                print_list(head);
+                break;
+            default:
+                print_menu();
+                break;
+        }
+    }
 
-    //club_odd_even(tail);
-    //print_list(tail);
-
-
-//    reverse_list(&tail);
-//    print_list(tail);
-
-    reverse_list_from_pos(&tail,0,3);
-    print_list(tail);
+    return 0;
 }
 
