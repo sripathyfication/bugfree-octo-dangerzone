@@ -1,40 +1,26 @@
+/*
+ * Swapping odd and even bits from
+ * a 32 bit unsigned integer.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_BITS 8
-int swap_odd_even_bits(int to_swap)
+typedef  unsigned int uint32_t;
+uint32_t swap_odd_even(uint32_t num)
 {
-    int i =0, j =0, tmp_e =0, tmp_o = 0, result = 0;
-    for (i=0, j=1; i < MAX_BITS && j < MAX_BITS; i+=2, j+=2) {
-        tmp_e = to_swap & (1 << i);
-        tmp_o = to_swap & (1 << j);
-        printf(" even_bit  %d odd_bit  %d even_mask %d odd_mask %d swap_even %d swap_odd %d\n",
-                i,j, (1 << i), (1 << j), (tmp_e), tmp_o);
-        result |= ((tmp_o >> j) | (tmp_e << (j-1)));
-        tmp_e = tmp_o = 0;
-    }
-    return result;
+#define ODD_32_BITS     0xAAAAAAAA
+#define EVEN_32_BITS    0x55555555
+
+    return (((num & ODD_32_BITS) >> 1) | ((num & EVEN_32_BITS) << 1));
 }
 
-int main(int argc, char **argv) 
+int main() 
 {
-    int result =0, j =0, i =0;
-    int num_tests =0, tc = 0;
-    if (argc < 3) return -1;
+    uint32_t num;
 
-    num_tests = atoi(argv[1]);
-    printf(" Number of tests: %d \n", num_tests);
+    printf("Enter the number for which you want to swap odd and even bits \n");
+    scanf("%u", &num);
 
-    while (num_tests) {
-        tc = atoi(argv[2 + i]);
-        printf(" TestCase: %d \n", tc);
-        result = swap_odd_even_bits(tc);
-        printf(" Result: %d \n", result);
-        i++;
-        num_tests--;
-    }
-                
-    return 0;
+    printf("Swapped even and odd bits number is : %u \n", swap_odd_even(num));
+
 }
-
-
