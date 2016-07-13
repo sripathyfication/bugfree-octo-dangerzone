@@ -43,6 +43,31 @@ void PrintInorder(struct tree *node)
 
 }
 
+void PrintPostOrder( struct tree *root)
+{
+    if (root == NULL)
+        return;
+
+    printf(" %d \t", root->value);
+
+    PrintPostOrder(root->left);
+
+    PrintPostOrder(root->right);
+
+    return;
+}
+
+void PrintPreOrder(struct tree *root)
+{
+    if (root == NULL)
+        return;
+
+    PrintPreOrder(root->left);
+    PrintPreOrder(root->right);
+
+    printf(" %d\t", root->value);
+
+}
 
 int main(void)
 {
@@ -58,6 +83,10 @@ int main(void)
 	root->right->left = new_node(1);
 
 	PrintInorder(root);
+    printf("\n");
+	PrintPreOrder(root);
+    printf("\n");
+	PrintPostOrder(root);
 
 	return 0;
 }
