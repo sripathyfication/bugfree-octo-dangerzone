@@ -1,34 +1,38 @@
-#include <stdio.h>
-#include <stdlib.h>
+/*
+ * Simple string reversal
+ *
+ */
 #include <string.h>
+#include <stdio.h>
 
-int main(int argc, char **argv) 
+char *reverse_string(char *inp)
 {
-    char *s_r;
-    char *begin, *end, tmp1, *tmp;
-    int s_len =0, s_tmp =0;
+    char *begin, *end ;
+    char tmp;
+    int len = 0; 
+    
+    len = strlen(inp);
+    begin = inp;
+    end = inp + (len -1);
 
-    // ensure right params are in.
-    if (argc < 2) return -1;
-
-    // get input str, and strlen
-    s_r = argv[1];
-    s_len = strlen(s_r);
-    printf("The string to be reversed is: %s \n", s_r);
-
-    // doing the needful
-    tmp = &tmp1;
-    begin = s_r;
-    end = begin + (s_len -1);
     while (begin <= end) {
-        *tmp = *begin;
-        *begin = *end;
-        *end = *tmp;
-        begin = begin +1;
-        end = end - 1;
-        s_tmp++;
+
+        tmp = *end;
+        *end = *begin;
+        *begin = tmp;
+        begin = begin+ 1;
+        end = end -1;
     }
 
-    printf("Reversed string is: %s \n", s_r);
-    return 0;
+    return inp;
+}
+
+int main()
+{
+    char *inp = "sripathy";
+    char *out;
+
+    printf("Input string: %s\n", inp);
+    printf(" Output string: %s\n", reverse_string(inp));
+
 }
