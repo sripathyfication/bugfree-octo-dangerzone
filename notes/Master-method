@@ -1,0 +1,42 @@
+                                                Master's theorem
+                                                ----------------
+
+
+1. A method to figure out the running time for recursive algorithms.
+
+2. Can be though of as, base case + normal case. Where,
+        Base Case: T(1) <= A constant.
+
+        Normal Case: a * T(n/b) + O(n^d)
+
+        where: 
+                a = # of recursive steps there are.
+                b = factor of input size shrinkage (or the amount by which input at each step is
+                        reduced)
+                d = a factor to determine how much work is done outside of recursive steps.
+
+    Based on values of a, b , d:
+
+    i) a = b ^ d  { T(n) = O(n ^d log n) }
+    ii) a < b ^ d { T(n) = O(n ^ d) }
+    iii) a > b ^ d { T(n) = O ( n ^ log b (a) }
+
+
+    What does these mean?
+    i) case 1 means that the amount of work done in each recursive step is equal to the total
+    recursions. This a classic case of mergesort. Each step the input size is half of the original
+    and we do exactly half the amount of work.
+
+    ii) case 2 means that the number of recursive steps is not growing proportional to size of
+    work in each step. Meaning we are doing more work in each recursive steps than the # of 
+    recursive steps there are. This is a classic integer multiplication problem or bubble sort.
+
+    iii) case 3 means that the number of recursive steps is a lot more than the work we do in each
+    recursive step. 
+
+    The above 3 cases come from:
+
+    T (n) = c. (n ^ d) . sumof(a/b ^j) { for 0 <= j <= log b (n) }
+
+
+
