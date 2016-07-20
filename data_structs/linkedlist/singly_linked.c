@@ -9,6 +9,9 @@ struct node {
 };
 
 
+/*
+ * Utility functions
+ */
 void print_list(struct node *head) 
 {
     int index = 0;
@@ -23,7 +26,6 @@ void print_list(struct node *head)
         index++;
     }
 }
-
 
 
 struct node *new_node(int data)
@@ -75,6 +77,9 @@ int get_length(struct node *head)
 }
 
 
+/*
+ * Problems with linked lists
+ */
 void front_back_split(struct node *head, struct node **first_head, struct node **second_head)
 {
     int half_length, length, first_len, second_len, tmp_len;
@@ -265,6 +270,33 @@ void reverse_list_from_pos(struct node **head, int start, int end)
     return;
 }
 
+struct node* remove_duplicates(struct node* head) 
+{
+    struct node *prev = NULL, *curr = NULL, *temp = NULL;
+
+    if (!head || !head->next) return head;
+
+    curr = head;
+
+    while (curr) 
+    {
+        if (prev) 
+        {
+            if (prev->data == curr->data) 
+            {
+                prev->next = curr->next;
+                temp = curr;
+                curr = curr->next;
+                free(temp);
+                continue;
+            } 
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+
+    return head;
+}
 
 
 void print_menu() 
@@ -280,6 +312,7 @@ void print_menu()
     printf(" l -- Print the length of the list \n");
     printf(" d -- Delete  a node  from list \n");
     printf(" f -- Split singly linked list into front and back halves \n");
+    printf(" b -- remove duplicates \n");
     printf(" e -- Exit \n");
     printf(" \n \n");
 }
@@ -293,7 +326,9 @@ int main(int argc, char **argv)
     bool has_cycle = false;
 
     push_node(1, &head);
+    push_node(1, &head);
     push_node(2, &head);
+    push_node(3, &head);
     push_node(3, &head);
     push_node(4, &head);
     push_node(5, &head);
@@ -305,6 +340,10 @@ int main(int argc, char **argv)
     while (1) {
         scanf("%c", &option);
         switch (option) {
+            case 'b':
+                printf(" removing duplicates from the list \n");
+                remove_duplicates(head);
+                break;
             case 'u':
                 printf(" Reversing linked list from position \n");
                 reverse_list_from_pos(&head,0,3);
