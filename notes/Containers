@@ -1,0 +1,35 @@
+
+                    General know-how on containers
+                    ------------------------------
+
+There are a few different philosophies. libvirt vs cgroups. 
+
+libvirt is a more traditional linux container. 
+
+Docker , rkt etc use cgroups. 
+
+
+Areas to focus on when working with containers?
+
+1. Cluster management. (Docker swarm, mesos, kubernetes)
+2. Container networking (Contiv, flannel etc) 
+3. Storage.
+4. Security.
+5. Policy (ACI, contiv does this too)
+
+Good intro to containers:
+
+http://contiv.github.io/articles/2016/03/06/scaling-microservices.html
+
+Why did libvirt not get more traction?
+
+
+The combination of highly specialised apps running within containers in conjunction with the
+cluster management tools are called microservices. This is a new paradigm in deploying apps
+in the server cluster.
+
+Due to this, it became logical to develop a low foot print linux os with just enough to run 
+containers. This led to the development of os' like core os, project atomic,
+ubuntu snappy, etc.
+
+These are OS with an extremely small foot print.
