@@ -1,0 +1,16 @@
+Notes:
+
+
+Computation vs Caching
+
+If there is a result from a previous recursion that is going to be used repeatedly, it makes sense
+to cache the results.
+
+For ex: in Fibonacci sequence calculation, some values might be used repeatedly. However, in quick
+sort or mergesort the recursion doesn't involved using a previously calculated value.
+
+
+If such a situation arises, save the calculated result in a cache, and in next recursive calls, if
+a result exists already then return that.
+
+Using linear space to solve exponential calls is a very valid way of reducing time complexity.
