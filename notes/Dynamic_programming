@@ -14,3 +14,24 @@ If such a situation arises, save the calculated result in a cache, and in next r
 a result exists already then return that.
 
 Using linear space to solve exponential calls is a very valid way of reducing time complexity.
+
+
+As a comparison in running times:
+
+Fibonacci calc without dp (fib.py):
+    time ./fib.py 35
+    Input: 35
+    Fibonacci number is: 9227465
+
+    real    0m3.807s
+    user    0m3.778s
+    sys     0m0.015s
+
+Fibonacci calc with dp (fib_dp.py):    
+    time ./fib_dp.py 35
+    Input: 35
+    Fibonacci number is: 9227465
+
+    real    0m0.020s
+    user    0m0.011s
+    sys     0m0.008s
