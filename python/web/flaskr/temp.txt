@@ -1,0 +1,10 @@
+total 56
+drwxr-xr-x  9 sriprama  staff    306 Aug  3 17:11 .
+drwxr-xr-x  5 sriprama  staff    170 Aug  3 09:05 ..
+-rw-r--r--  1 sriprama  staff  12288 Aug  3 11:05 flaskr.db
+-rwxr-xr-x  1 sriprama  staff   2579 Aug  3 13:29 flaskr.py
+-rw-r--r--  1 sriprama  staff   4323 Aug  3 13:29 flaskr.pyc
+-rw-r--r--  1 sriprama  staff    180 Aug  3 09:07 schema.sql
+drwxr-xr-x  3 sriprama  staff    102 Aug  3 11:07 static
+-rw-r--r--  1 sriprama  staff      0 Aug  3 17:11 temp.txt
+drwxr-xr-x  5 sriprama  staff    170 Aug  3 13:34 templates

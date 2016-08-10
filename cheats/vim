@@ -1,0 +1,6 @@
+To delete n number of lines below cursor:
+:+,+nd
+
+To delete all lines below cursor:
+:+,$d
+
