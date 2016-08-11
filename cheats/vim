@@ -4,3 +4,11 @@ To delete n number of lines below cursor:
 To delete all lines below cursor:
 :+,$d
 
+To invoke shell from within vim:
+:sh
+
+To copy all lines from cursor position to end of file:
+"*yG
+
+To copy all lines from start of file to end of file:
+gg"*yG
