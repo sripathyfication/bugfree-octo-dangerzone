@@ -1,1 +1,37 @@
 http://pages.cs.wisc.edu/~cao/papers/summary-cache/node8.html
+
+
+Probability of a false positive depends on:
+
+m - number of bits in the bit vector
+k - number of  independent hash functions
+n - number of keys
+p - probability of false positive
+
+
+
+P(x) is 0  = (1 - 1/m) ^ (k * n)
+
+
+Probability of a false positive:
+
+(1/2) ^ k = (0.6185) ^ m/n
+
+k = (m/n) ln 2
+
+This means that for a given false positive probability p, the length of a Bloom filter m is
+proportionate to the number of elements being filtered n and the required number of hash functions
+only depends on the target false positive probability p.
+
+
+m = n * ln p / (ln 2) ^ 2
+
+k = ln p / ln 2 
+
+
+number of bits needed is directly proportional to number of entries
+
+number of hash functions is a function of only the false positives needed.
+
+
+
