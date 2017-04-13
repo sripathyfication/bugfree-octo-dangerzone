@@ -1,7 +1,16 @@
-http://pages.cs.wisc.edu/~cao/papers/summary-cache/node8.html
 
 
-Probability of a false positive depends on:
+
+Take your input and run it through K hash functions to generate k bits.
+Set these k bits in your bit array of size m.
+
+To see if an input stream exists, run them through k hash functions and check if the corresponding
+generated bits are set in the array.
+
+If all the bits are set - the input maybe present!
+
+if even one bit is not set - the input is certainly not present.
+
 
 m - number of bits in the bit vector
 k - number of  independent hash functions
@@ -9,15 +18,14 @@ n - number of keys
 p - probability of false positive
 
 
-
-P(x) is 0  = (1 - 1/m) ^ (k * n)
-
-
 Probability of a false positive:
 
-(1/2) ^ k = (0.6185) ^ m/n
+How big the bit array is and how many hash functions we use.
+If the bit array is too small, then greater chances of false positives. However if too big, then
+the size becomes an issue.
 
-k = (m/n) ln 2
+If we choose too many hash functions, then the bloom filter will be slower. However, if we choose,
+too few, then we run the risk of having a bad false positive rate.
 
 This means that for a given false positive probability p, the length of a Bloom filter m is
 proportionate to the number of elements being filtered n and the required number of hash functions
@@ -34,4 +42,7 @@ number of bits needed is directly proportional to number of entries
 number of hash functions is a function of only the false positives needed.
 
 
+Other links:
+http://citeseer.ist.psu.edu/viewdoc/download;jsessionid=6CA79DD1A90B3EFD3D62ACE5523B99E7?doi=10.1.1.127.9672&rep=rep1&type=pdf
+http://pages.cs.wisc.edu/~cao/papers/summary-cache/node8.html
 
