@@ -1,0 +1,24 @@
+1. To find if a number is odd or even, take number and do bitwise and with 1: if true then number
+   odd, else it is even.
+
+   if (n & 1) : odd else even
+
+2. Two numbers are of opposite sign, iff x ^ y is less than zero. 
+
+    if (x ^ y) < 0 : odd else even 
+
+3. To add 1 to an interger:
+
+    -~x 
+
+    -x = ~x + 1
+    -~x = x + 1
+
+4. Swapping two numbers without using a third number:
+    
+   while (x !=y) {
+
+    x = x ^ y;
+    y = x ^ y;
+    x = x ^ y;
+   }
