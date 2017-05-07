@@ -1,5 +1,6 @@
 
-
+                                Blooom Filters:
+                                ---------------
 
 Take your input and run it through K hash functions to generate k bits.
 Set these k bits in your bit array of size m.
