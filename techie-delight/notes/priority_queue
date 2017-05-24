@@ -1,0 +1,16 @@
+What is it:
+
+   Like a queue or stack, but each element has a priority associated with it.
+   An element of higher priority will get served before an element of lower priority.
+   If there is a tie, order in queue is used to return.
+
+Operations supported:
+
+    push (x) - push an element into the Queue O(log n) sorted by priority
+    top(), peek() - O(1) operation, returns the highest priority (or lowest priority) element.
+                    Doesn't change the state.
+    pop() - Returns and removes the highest priority (or lowest) element in queue.
+
+
+Uses:
+

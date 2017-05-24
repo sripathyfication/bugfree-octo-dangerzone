@@ -1,0 +1,27 @@
+What is it:-
+
+    Its a tree (most common implementation is binary tree) with 2 additional properties:
+        1. Complete tree, i.e each node is filled, barring the last level.
+        2. heap property - each node is either greater or smaller than the child node. 
+
+Min head & Max Heap:-        
+    
+    A min heap is in one which each node is lesser than the child node. ( Root is smallest node)
+
+    A max heap is in one which each node is greater than the child node. (Root is largest node)
+
+
+Heap Operations:-
+
+    Heapify-down(i) - pop() operation uses this. Return min or max heap. Replace root with last
+    level element and call heapify-down on it.
+
+    Heapify-up(i) - push() operation uses this. Add new node to last level on heap and call
+    heapify-up on it.
+
+
+Applications:-
+    
+    Prim's algorithm for minimum spanning tree
+
+    Djikstra's algorithm for shortest path.
