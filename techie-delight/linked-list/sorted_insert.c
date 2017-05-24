@@ -57,25 +57,19 @@ void sorted_insert(struct node *insert, struct node **head)
     }
 
     /* else iterate over the list and find */ 
-    while (find->next) {
+    while (find) {
         prev = find;
         if (find->data < insert->data) {
             find = find->next;
         } else {
+            find = prev;
             break;
         }
     }
 
-    /* if find has a next, which means, this new node has to be inserted
-     * in between. If find doesn't have a next, then insert is the next
-     * */
-    if (prev->next) {
-        insert->next = find;
-        prev->next = insert;
-    } else if (prev->next == NULL) {
-        prev->next = insert;
-    }
-
+    insert->next = find->next;
+    find->next = insert;
+     
     return ;
 
 }
@@ -91,6 +85,8 @@ int main() {
 
     print_list(head);
     sorted_insert(new_node(4), &head);
+    print_list(head);
+    sorted_insert(new_node(6), &head);
     print_list(head);
 
     return 0;
