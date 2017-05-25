@@ -27,7 +27,11 @@ class Stack:
             return element
         else:
             print "Stack is empty"
-    
+
+    def flush(self):
+        for i in range(0, len(self.storage) -1):
+            self.storage.pop()
+
     def print_stack(self):
         print "STACK"
         print "-----"
