@@ -10,8 +10,8 @@ class Stack:
     def is_empty(self):
         return self.empty
 
-    def top(self):
-        return self.top
+    def get_top(self):
+        return self.storage[self.top - 1]
 
     def push(self, element):
         self.storage.insert(self.top, element)
