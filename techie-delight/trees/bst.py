@@ -32,8 +32,10 @@ class Tree:
         return self.root      
 
     def print_tree(self):
+        print "--- BST --- "
         if self.root is not None:
             self._print_tree(self.root)
+        print "---  --- "
     
     def _print_tree(self, node):
         if node is not None:
