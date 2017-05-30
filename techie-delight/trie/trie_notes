@@ -1,0 +1,42 @@
+
+A trie is a tree with a fanout of greater than 2. i.e binary tree each node has 2 child nodes
+ternary tree, each node has a fanout of 3 nodes. Trie, each node can have a maximum fanout of the
+size of the english alphabet.
+
+
+https://www.toptal.com/java/the-trie-a-neglected-data-structure
+
+
+struct trie {
+    struct trie *children[26];
+    bool is_leaf;
+};
+
+
+supported operations:
+
+def char_to_index(c):
+    return (int(c) - int('a'))
+
+insert:-
+    
+    level = lenght of key
+    node = head of trie
+    for every level:
+        index = char_to_index(key(level)); >>> get the position of every character in the key(word)
+        if (node.children[index] is NULL)
+            node.children[index] = new_trie_node();
+            
+    node.children[index].is_leaf = true        >>> set the last node as leaf 
+        
+search:- 
+    level = length of key
+    node = head of trie
+    for every level:
+        index  = char_to_index(key(level))
+        if node.children[index] == NULL
+            return false
+        
+        node = node.children[index]    
+
+        return (node is not None and node.is_leaf is True)
