@@ -1,5 +1,18 @@
 #/usr/bin/python
 
+# Kadane's algorithm:
+#
+# going over the array only once but remembering the previous result.
+# rudimentary form of dynamic programming
+#
+# compute a max on every iteration starting with 0
+# if max is less than 0, that means there was a negative number
+# reset it to 0
+# if not then check against max_sum_so_far:
+# if max is greater than that, make max_sum_so_far = max
+#
+# return max_sum_so_far
+
 def max_sum_subarray(array):
     max_ = 0
     max_so_far = 0
