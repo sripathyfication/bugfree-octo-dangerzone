@@ -1,4 +1,5 @@
-Algorithms:
+Algorithms:-
+------------
 
 Categories : - Category of problem it solves 
 --------------------------------------------
