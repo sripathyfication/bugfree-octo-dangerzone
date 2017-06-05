@@ -11,12 +11,12 @@ G = {V, E}
 V = All nodes in the graph. For e.g. cities in a map, people in facebook, electronic components in
     a circuit board.
 
-E = A 2-subset of vertices. An edge connects two vertices. They can be directed or undirected.
+E = An edge connects two vertices. They can be directed or undirected.
     Weighted or Unweighted. For e.g. all roads on a map, all connecting wires in a circuit board.
 
 
 Types of graphs:
----------------
+----------------
 
 1. Directed vs Undirected: 
 -------------------------
