@@ -1,5 +1,6 @@
+-----------------
 Notes on Graphs:-
----------------
+-----------------
 
 ----------------
 What is a graph?
@@ -66,4 +67,21 @@ then means, an edge e = (x,x). This is the important distinction between cyclic 
 unsimple graphs.
 
     
-There are some more graphs that I'm not interested in right now.
+---------------------------
+Types of Graph Problems:-
+---------------------------
+
+1. Searching through a graph.
+   a. Breadth First Search
+   b. Depth First Search
+
+2. Minimum spanning tree of a graph 
+    Least weight way of connecting vertices of a graph, given that each edge has a weight
+    associated with it.
+
+3. Maximum network flow.
+    Given a source vertex and sink vertex, and the amount of material that can traverse through an
+    edge, find the maximum flow a network can handle.
+
+4. shortest path
+    Given there is a weight associated with an edge, find the shortest path between 2 vertices.
