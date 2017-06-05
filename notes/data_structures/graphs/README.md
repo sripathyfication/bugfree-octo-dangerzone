@@ -85,3 +85,85 @@ Types of Graph Problems:-
 
 4. shortest path
     Given there is a weight associated with an edge, find the shortest path between 2 vertices.
+
+
+------------------------
+Graph Representations:-
+------------------------
+
+A graph can be represented in 2 ways in memory:
+    1. Adjacency list.
+    2. Adjacency Matrix.
+
+    Given a directed graph :
+
+        (1)  ---> (2) ---> (5) 
+         |                  ^ 
+         |                  | 
+         v                  |
+        (3) ---> (4) -------+ 
+
+1. Adjacency List:
+
+        Adjacency List will look like this:
+
+            [1] --> [2] --> [3] --.
+            [2] --> [5] --.
+            [3] --> [4] --.
+            [4] --> [5] --.
+            [5] --.
+
+        It is an array of vertices indexed by its destination # or vertex id.
+        At each array entry is a singly linked list pointing to a vertex than can be reached
+        directly from current vertex. Its adjacency.    
+
+        Its representation doesn't change whether the graph is directed or undirected.
+
+        Pros:
+            Occupies less space than adjancency matrix
+
+        Cons:
+            Searching for a vertex can take time.
+
+        Typically you'd use this when the graph is sparse. i.e. |E| << |V2|. # of edges is
+        significantly smaller than the number of vertices.
+
+2. Adjaceny Matrix:
+
+        Adjacency Matrix would look like this:
+
+            1   2   3   4   5
+        -----------------------  
+        1   0   1   1   0   0
+        -----------------------  
+        2   0   0   0   0   1
+        -----------------------  
+        3   0   0   0   1   0
+        -----------------------  
+        4   0   0   0   0   1
+        -----------------------  
+        5   0   0   0   0   0   
+        -----------------------  
+
+        It is |v| x |v| matrix. If there is an edge (u,v) then Adj[u][v] = 1
+        We can also represent weighted graphs this way by saving the weight/length at index
+        adj[u][v] instead of 1.
+
+        In case of an undirected graph the adjacency matrix is perfectly symmetrical. So, if
+        the graph above was undirected the adjacency matrix would look like this:
+
+            1   2   3   4   5
+        -----------------------  
+        1   0   1   1   0   0
+        -----------------------  
+        2   1   0   0   0   1
+        -----------------------  
+        3   1   0   0   1   0
+        -----------------------  
+        4   0   0   1   0   1
+        -----------------------  
+        5   0   1   0   1   0   
+        -----------------------  
+
+        So in this case Adj[] = Transpose(Adj[]) which means that we can save just the upper
+        diagonal matrix in memory to save space.
