@@ -1,8 +1,8 @@
-                                                Notes on Graphs:
-                                                ---------------
+Notes on Graphs:-
+---------------
 
 What is a graph?
-~~~~~~~~~~~~~~~~
+----------------
 
 A graph G is a set of vertices V and edges E.
 
@@ -16,7 +16,7 @@ E = A 2-subset of vertices. An edge connects two vertices. They can be directed 
 
 
 Types of graphs:
-~~~~~~~~~~~~~~~~
+---------------
 
 1. Directed vs Undirected: 
 -------------------------
