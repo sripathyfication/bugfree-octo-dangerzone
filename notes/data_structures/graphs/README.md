@@ -167,3 +167,24 @@ A graph can be represented in 2 ways in memory:
 
         So in this case Adj[] = Transpose(Adj[]) which means that we can save just the upper
         diagonal matrix in memory to save space.
+
+-------------------------------------
+Elementary Algorithms:-
+-------------------------------------
+
+1. Breadth First Search (BFS):-
+--------------------------------
+
+
+
+
+2. Depth First Search (DFS):-
+--------------------------------
+
+
+3. Topological Sorting:-
+----------------------
+
+4. Strongly connected components:-
+----------------------------------
+
