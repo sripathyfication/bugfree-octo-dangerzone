@@ -39,14 +39,14 @@ class Server:
                 print sys.stderr," accepted connection from ", client_address
                 while True:
                     data = connection.recv(16)
-                    print >>sys.stderr, " got data \n", data
+                    print >>sys.stderr, ".. got data::", data
                     if not data:
                         print >>sys.stderr, "..no data from client ", client_address
                         break
                     else:    
-                        print >>sys.stderr, " sending data back"
                         connection.sendall(data)
-
+                        print >>sys.stderr, ".. sending data back"
+                        break
             finally:
                 connection.close()
 
