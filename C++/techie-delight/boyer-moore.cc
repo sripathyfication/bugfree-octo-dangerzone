@@ -15,6 +15,8 @@
  */
 
 #include <iostream>
+#include <stdlib.h>
+using namespace std;
 void print_array(int *arr, int size) {
 
     for (int i = 0; i < size; i++) {
@@ -45,7 +47,7 @@ int boyer_moore_vote(int *arr, int size)
 
 int main() {
 
-    int arr[] = { 2, 8, 7, 2, 2, 5, 2, 3, 1, 2, 2 };
+    int arr[] = { 8,8,1,2,3,4,9 };
     int n = sizeof(arr)/sizeof(arr[0]);
     int ret = 0;
 

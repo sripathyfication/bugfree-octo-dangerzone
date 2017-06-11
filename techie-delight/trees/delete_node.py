@@ -8,8 +8,6 @@
 # 2. 1 child: - copy that child to this current node, delete the last child
 # 3. 2 children - Find the inorder successor (the left most child on the right subtree) and
 # replace the current node with that. Free the inorder successor.
-#
-
 
 from bst import Tree
 
@@ -32,7 +30,7 @@ def delete_node(node, val):
             node = node.right
         elif val == node.value:
             break
-            
+
     print "Node to be deleted: " + str(node.value)
     if node.left is None and node.right is None:
         print "delete case 1"    
