@@ -1,7 +1,7 @@
 #/usr/bin/python
 
 '''
-    Given an array of integers, find the maximum element.
+    Given an array of integers, find the majority element.
 
     Using the boyer moore vote algoithm, we can find the majority
     element in place and in linear time.
