@@ -34,12 +34,15 @@ Several forms of binary tree problems can be solved by employing one of the trav
 The following table categorises problems based on one of the above techniques that can be used to
 solve them.
 
+-----------------------------------------------------------------------------------------------------------
 In-order                    Pre-order                   Post-order                  BFS                 DFS
 ------------------------------------------------------------------------------------------------------------
-convert Tree to BST         Mirror a binary tree        Max sum from root->leaf     
+convert Tree to BST         Mirror a binary tree        Max sum from root,leaf     
 ............................................................................................................
                             Print all path from root    delete a tree
 ............................................................................................................
-                                                        height balanced
+                            Symmetric trees             height balanced
+............................................................................................................
+                            Lowest common ancestor
 ............................................................................................................
 
