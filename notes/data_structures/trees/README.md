@@ -1,7 +1,7 @@
 Binary Trees:-
 -------------
 
-A form a graph where each node could have a left child, a right child, or either one, or none.
+A form of a graph where each node could have a left child, a right child, or either one, or none.
 
 Several forms of binary tree problems can be solved by employing one of the traversal techniques:
 
