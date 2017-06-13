@@ -3,7 +3,7 @@ Binary Trees:-
 
 A form of a graph where each node could have a left child, a right child, or either one, or none.
 
-Several forms of binary tree problems can be solved by employing one of the traversal techniques:
+Several forms of binary tree problems can be solved by employing one of the following traversal techniques:
 
 1. In order Traversal:
 ---------------------
