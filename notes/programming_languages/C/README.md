@@ -1,4 +1,4 @@
-### The C Memory Layout:-
+# The C Memory Layout:-
 -------------------------
 
 
@@ -26,13 +26,13 @@
                      ...........+--------------------+
 
 
-# Text :- 
+### Text :- 
 ----------
 
 Read from the executable file and loaded into memory. It contains the code segment (aka
 executable instructions). It is read only.
 
-# Initialized Data:- 
+### Initialized Data:- 
 ---------------------
 
 The initialized data segment contains static and global variables defined and
@@ -43,7 +43,7 @@ area.
 E.g. const char c will go to initialized read-only
 
 
-# Unitialized Data (BSS):-
+### Unitialized Data (BSS):-
 ---------------------------
 
 This portion of global or static variables declared by the programmer but not initialized are put
