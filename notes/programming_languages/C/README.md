@@ -68,3 +68,16 @@ For. e.g: global int it
 * All dynamically allocated memory comes from here.
 * It is managed by malloc,realloc, brk,sbrk system calls.
 * The heap is shared by all dynamically loaded libraries, shared libraries loaded by a program.
+
+
+# SBRK & BRK:-
+--------------
+
+Brk and Sbrk set the programs break. I.e. the lowest addressable memory location which is just
+above the BSS. 
+* Brk sets this addr .
+* Sbrk increments this addr by (increment) bytes. When called with 0 it returns the current program break. 
+* The addressable memory now becomes from addr to the lowest stack pointer. This defines the heap region.
+
+
+
