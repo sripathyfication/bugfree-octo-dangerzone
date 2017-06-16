@@ -1,5 +1,4 @@
 #include <iostream>
-#include <boost>
 
 class B {
     private:

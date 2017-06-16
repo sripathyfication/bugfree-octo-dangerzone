@@ -40,8 +40,6 @@ def boyer_moore(arr):
                 vote -= 1
     return curr_max
 
-
-
 if __name__ == '__main__':
     arr = [6,1,2,3,0,0,2,0,0,0,0]
     print arr
