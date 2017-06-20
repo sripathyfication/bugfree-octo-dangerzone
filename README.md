@@ -1,6 +1,8 @@
-# Bug Free Octo Dangerzone or how to be an incredible software engineer and save the world.
---------------------------------------------------------------------------------------------
+# Bug Free Octo Dangerzone
+--------------------------
 This repository chronicles my attempts at professional development.
+
+Goal: To become an exceptional software designer and architect.
 
 Here are some links to great resources for study:
 
