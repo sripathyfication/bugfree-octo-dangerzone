@@ -1,5 +1,5 @@
-# List of interesting things
-----------------------------
+# A collection of very interesting things
+-----------------------------------------
 
 #### Simpson's paradox or Yule-Simpson effect in probability and statistics
 ---------------------------------------------------------------------------
