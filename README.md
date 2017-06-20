@@ -1,5 +1,5 @@
-# Bug Free Octo Dangerzone
---------------------------
+# Bug Free Octo Dangerzone or how to be an incredible software engineer and save the world.
+--------------------------------------------------------------------------------------------
 This repository chronicles my attempts at professional development.
 
 Here are some links to great resources for study:
