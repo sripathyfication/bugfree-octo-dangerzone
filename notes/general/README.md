@@ -44,51 +44,51 @@ will actually know whether you are fixing things.
 
 ## Learning
 
-####Call your shot. 
+#### Call your shot. 
 Before you run code, predict out loud exactly what will happen.
 
-####Concrete hypotheses. 
+#### Concrete hypotheses. 
 When the program is misbehaving, articulate exactly what you think is wrong
 before making a change. If you have two or more hypotheses, find a differential diagnosis.
 
-####Remove extraneous detail. 
+#### Remove extraneous detail. 
 When reporting a bug, find the shortest repro steps. When isolating a
 bug, find the shortest test case. When using a new API, start from the most basic example. “All
 that stuff can’t possibly matter,” is an expensive assumption when it’s wrong.
 E.g. see a bug on mobile, reproduce it with curl
 
-####Multiple scales. 
+#### Multiple scales. 
 Move between scales freely. Maybe this is a design problem, not a testing
 problem. Maybe it is a people problem, not a technology problem [cheating, this is always true].
 
-##Transcend Logic
+## Transcend Logic
 
-####Symmetry. 
+#### Symmetry. 
 Things that are almost the same can be divided into parts that are identical and parts
 that are clearly different.
 
-####Aesthetics. 
+#### Aesthetics. 
 Beauty is a powerful gradient to climb. It is also a liberating gradient to flout
 (e.g. inlining a bunch of functions into one giant mess).
 Rhythm. Waiting until the right moment preserves energy and avoids clutter. Act with intensity
 when the time comes to act.
 
-####Tradeoffs. 
+#### Tradeoffs. 
 All decisions are subject to tradeoffs. It’s more important to know what the decision
 depends on than it is to know which answer to pick today (or which answer you picked yesterday).
 
-##Risk
+## Risk
 
-####Fun list. 
+#### Fun list. 
 When tangential ideas come, note them and get back to work quickly. Revisit this list
 when you’ve reached a stopping spot.
 
-####Feed Ideas. 
+#### Feed Ideas. 
 Ideas are like frightened little birds. If you scare them away they will stop coming
 around. When you have an idea, feed it a little. Invalidate it as quickly as you can, but from
 data not from a lack of self-esteem.
 
-####80/15/5. 
+#### 80/15/5. 
 Spend 80% of your time on low-risk/reasonable-payoff work. Spend 15% of your time on
 related high-risk/high-payoff work. Spend 5% of your time on things that tickle you, regardless of
 payoff. Teach the next generation to do your 80% job. By the time someone is ready to take over,
@@ -99,6 +99,4 @@ off and will become your new 80%. Repeat.
 
 The flow in this outline seems to be from reducing risks by managing time and increasing
 learning to mindfully taking risks by using your whole brain and quickly triaging ideas.
-
-
 
