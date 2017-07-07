@@ -25,7 +25,7 @@ is greater than the cycle overhead we avoided.
 (Example of One Thing at a Time, Slicing, and Easy Changes)
 
 #### Easy changes. 
-    When faced with a hard change, first make it easy (warning, this may be hard), then
+When faced with a hard change, first make it easy (warning, this may be hard), then
 make the easy change. (e.g. slicing, one thing at a time, concentration, isolation). Example of
 slicing.
 
