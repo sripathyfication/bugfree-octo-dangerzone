@@ -17,9 +17,6 @@ if [ $# -eq 1 ]
 fi
 git commit -m "$msg"
 
-#do a pull first
-git pull
-
 # Push source and build repos.
 git push origin master
 

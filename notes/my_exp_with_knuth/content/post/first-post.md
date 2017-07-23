@@ -1,7 +1,6 @@
 ---
-title: "First Post"
+title: "What is this?"
 date: 2017-07-23T15:58:32-07:00
-draft: true
 ---
 This blog contains / will contain all of my collective technical knowledge.
 First steps:
