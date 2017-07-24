@@ -3,6 +3,7 @@ title: "What is this?"
 date: 2017-07-23T15:58:32-07:00
 ---
 This blog contains / will contain all of my collective technical knowledge.
+
 First steps:
 
 1. Study broad topics:
