@@ -19,10 +19,10 @@
     <title>
       
       
-         What is this? 
+         How to think about algorithms? 
       
     </title>
-    <link rel="canonical" href="https://sripathyfication.github.io/post/first-post/">
+    <link rel="canonical" href="https://sripathyfication.github.io/post/algos-about/">
 
     <style>
   * {
@@ -398,53 +398,88 @@
 
 
 <section id=content>
-  <h1> What is this? </h1>
+  <h1> How to think about algorithms? </h1>
 
   <div id=sub-header>
-    July 2017 · 1 minute read
+    July 2017 · 2 minute read
   </div>
 
   <div class="entry-content">
-    <p>This blog contains / will contain all of my collective technical knowledge.</p>
+    
 
-<p>First steps:</p>
-
-<ol>
-<li><p>Study broad topics:
-a. Dynamic programming
-b. Backtracking
-c. Graph theory
-d. Strings, pattern matching, searching (rabin karp, knuth morris pratt)
-e. Linked lists
-f. Tries
-g. Trees
-h. Heaps
-i. tree traversals, bfs, dfs, djikstra&rsquo;s, bellman ford, inorder, pre
-order, post order
-j. Linux concepts
-k. Networking concepts
-l. python concepts
-m. c++ concepts
-n. C concepts
-o. operating concepts</p></li>
-
-<li><p>When to apply what algorithm (strategies)</p></li>
-
-<li><p>system design problems:</p>
+<h2 id="categories-category-of-problem-it-solves">Categories : - Category of problem it solves</h2>
 
 <ol>
-<li>Design a webserver to host images</li>
-<li>design a load balancer</li>
-<li>how would you design git</li>
+<li><p>Search and Sorting &ndash; Search for a key in a collection of keys. Sort a list of values to find
+max or min.</p></li>
+
+<li><p>Pattern matching &ndash; Given an input string and a pattern, try to deduce different things about
+the pattern. Is it present? Shortest substring etc..</p></li>
+
+<li><p>Bit algorithms &ndash; Various bit manipulation related questions</p></li>
+
+<li><p>Mathematical algorithms &ndash; Solves some mathematical problems, e.g. multiplication of numbers,
+pascal&rsquo;s triangle, fibonacci etc.</p></li>
+
+<li><p>Geometric algorithms &ndash; solves some geometric problem, given a set of points, find closest set
+of points etc.</p></li>
+
+<li><p>Graph algorithms &ndash; pertaining to graph traversal etc.</p></li>
+
+<li><p>Randomized algorithms &ndash;</p></li>
+</ol>
+
+<h2 id="paradigms-how-the-algorithm-goes-about-solving-a-problem">Paradigms: - How the algorithm goes about solving a problem</h2>
+
+<ol>
+<li><p>Greedy algorithms &ndash; Solves a problem piece by piece, each time choosing the best possible next
+step. Used in optimization problems
+ e.g. kruskal&rsquo;s minimum spanning tree &ndash; find a minimum spanning tree.
+      prim&rsquo;s algorithm</p></li>
+
+<li><p>Dynamic programming &ndash; Divides a problem into sub problems and solves them, each time
+remembering the solution to sub problems so as to not recompute. Typical problems that can be
+solved by DP:</p>
+
+<ol>
+<li><p>optimal substructure : - optimal solution can be arrived by combining the optimal solution
+of each subproblem</p></li>
+
+<li><p>Overlapping subproblems : - E.g. fibonacci number, the same sub problem will need to be
+solved multiple times, instead we could remember the solution to previous computations
+and look it up in the next iteration.</p></li>
 </ol></li>
+
+<li><p>Divide &amp; Conquer &ndash; similar to DP, it also divides the problem into sub problems, but the sub
+problems don&rsquo;t overlap.
+divide &ndash; divide in to subproblems
+conquer &ndash; compute results to each sub problem
+combine &ndash; combine results of each sub problem
+e.g. binary search, quick sort, merge sort etc.</p></li>
+
+<li><p>Backtracking &ndash; Try a particular solution, if it doesn&rsquo;t work try another until you find a
+solution that works.<br />
+For e.g: in a knight&rsquo;s tour problem, a knight can make 8 possible moves, we try a move and see if
+it takes us to a solution where all 8 x 8 blocks in a chess board are traversed. If not, we go back
+and try another move.</p></li>
+</ol>
+
+<p>How are we better than a naive solution?</p>
+
+<ol>
+<li><p>Branch and Bound &ndash;
+Don&rsquo;t know what it is as of yet. But it is used in cases where we have to maximize value and
+minize cost. Knapsack problem.</p>
+
+<p>scheduling jobs, landing airplanes in a runway etc..</p></li>
 </ol>
 
   </div>
 
   <div id=links>
     
+      <a class="basic-alignment left" href="https://sripathyfication.github.io/post/first-post/">&laquo; What is this?</a>
     
-      <a class="basic-alignment left" href="https://sripathyfication.github.io/post/algos-about/">How to think about algorithms? &raquo;</a>
     
   </div>
 </section>
