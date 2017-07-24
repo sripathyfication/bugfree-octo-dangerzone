@@ -1,7 +1,0 @@
-[submodule "notes/my_exp_with_knuth/themes/black-and-light"]
-	path = notes/my_exp_with_knuth/themes/black-and-light
-	url = https://github.com/davidhampgonsalves/hugo-black-and-light-theme.git
-[submodule "notes/my_exp_with_knuth/public"]
-	path = notes/my_exp_with_knuth/public
-	url = https://github.com/sripathyfication/sripathyfication.github.io.git
-	branch = master
