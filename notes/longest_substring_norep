@@ -1,0 +1,10 @@
+ Longest Substring without repetition
+ -------------------------------------
+ 1. Trick is to use a hash datastructure such as a dictionary
+ 2. Traverse the string for every character mark the position and save the character
+    map[char] = i
+3. if the char exists in the map, check if its current index is greater than the one already present
+4. if so, update the currlen of substring as current index - original position of character
+5. if not, do nothing
+6. if currlen > max_len , then update max_len with current length as the new max length.
+7. Once we reach the end of the string, return maxlen
